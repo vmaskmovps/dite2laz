@@ -9,141 +9,142 @@ unit DITE2Laz.Theme;
 interface
 
 uses
-  Classes, DITE2Laz.Theme.Types, DOM, SysUtils, XMLRead;
+  Classes,
+  DITE2Laz.Theme.Types,
+  DOM,
+  SysUtils,
+  XMLRead;
 
-function XMLToDITETheme(const FileName: String): TDITETheme;
+function XMLToDITETheme(const FileName: string): TDITETheme;
 
 implementation
 
-function NodeText(const ANode: TDOMNode; const ATag: UnicodeString): UnicodeString;
-  var
-    ChildNode: TDOMNode;
-  begin
-    Result    := '';
-    ChildNode := ANode.FindNode(ATag);
-    if Assigned(ChildNode) then
-      Result := ChildNode.TextContent;
-  end;
+function NodeText(const ANode: TDOMNode; const ATag: unicodestring): unicodestring;
+var
+  ChildNode: TDOMNode;
+begin
+  Result    := '';
+  ChildNode := ANode.FindNode(ATag);
+  if Assigned(ChildNode) then
+    Result := ChildNode.TextContent;
+end;
 
-  function TagToBool(const ANode: TDOMNode; const ATag: UnicodeString): Boolean;
-  begin
-    Result := StrToBoolDef(AnsiString(NodeText(ANode, ATag)), False);
-  end;
+function TagToBool(const ANode: TDOMNode; const ATag: unicodestring): boolean;
+begin
+  Result := StrToBoolDef(ansistring(NodeText(ANode, ATag)), False);
+end;
 
-  function GetThemeElement(const ANode: TDOMNode): TDITEThemeElement;
-  var
-    Element: TDITEThemeElement;
-  begin
-    Element.Bold      := TagToBool(ANode, 'Bold');
-    Element.Italic    := TagToBool(ANode, 'Italic');
-    Element.Underline := TagToBool(ANode, 'Underline');
+function GetThemeElement(const ANode: TDOMNode): TDITEThemeElement;
+var
+  Element: TDITEThemeElement;
+begin
+  Element.Bold      := TagToBool(ANode, 'Bold');
+  Element.Italic    := TagToBool(ANode, 'Italic');
+  Element.Underline := TagToBool(ANode, 'Underline');
 
-    Element.DefaultBackground := TagToBool(ANode, 'DefaultBackground');
-    Element.DefaultForeground := TagToBool(ANode, 'DefaultForeground');
+  Element.DefaultBackground := TagToBool(ANode, 'DefaultBackground');
+  Element.DefaultForeground := TagToBool(ANode, 'DefaultForeground');
 
-    Element.ForegroundColorNew := String(NodeText(ANode, 'ForegroundColorNew'));
-    Element.BackgroundColorNew := String(NodeText(ANode, 'BackgroundColorNew'));
+  Element.ForegroundColorNew := string(NodeText(ANode, 'ForegroundColorNew'));
+  Element.BackgroundColorNew := string(NodeText(ANode, 'BackgroundColorNew'));
 
-    Result := Element;
-  end;
+  Result := Element;
+end;
 
-  procedure SetThemeElement(const APropName: UnicodeString; const AElement: TDITEThemeElement;
-  var Theme: TDITETheme);
-  begin
-    case APropName of 
-    'AdditionalSearchMatchHighlight':    
+procedure SetThemeElement(const APropName: unicodestring;
+  const AElement: TDITEThemeElement; var Theme: TDITETheme);
+begin
+  case APropName of
+    'AdditionalSearchMatchHighlight':
       Theme.AdditionalSearchMatchHighlight := AElement;
-    'Assembler':    
+    'Assembler':
       Theme.&Assembler := AElement;
-    'AttributeNames':    
+    'AttributeNames':
       Theme.AttributeNames := AElement;
-    'AttributeValues':    
+    'AttributeValues':
       Theme.AttributeValues := AElement;
-    'BraceHighlight':    
+    'BraceHighlight':
       Theme.BraceHighlight := AElement;
-    'Character':    
+    'Character':
       Theme.Character := AElement;
-    'CodeFoldingTree':    
+    'CodeFoldingTree':
       Theme.CodeFoldingTree := AElement;
-    'Comment':    
+    'Comment':
       Theme.Comment := AElement;
-    'DiffAddition':    
+    'DiffAddition':
       Theme.DiffAddition := AElement;
-    'DiffDeletion':    
+    'DiffDeletion':
       Theme.DiffDeletion := AElement;
-    'DiffMove':    
+    'DiffMove':
       Theme.DiffMove := AElement;
-    'DisabledBreak':    
+    'DisabledBreak':
       Theme.DisabledBreak := AElement;
-    'EnabledBreak':    
+    'EnabledBreak':
       Theme.EnabledBreak := AElement;
-    'ErrorLine':    
+    'ErrorLine':
       Theme.ErrorLine := AElement;
-    'ExecutionPoint':    
+    'ExecutionPoint':
       Theme.ExecutionPoint := AElement;
-    'Float':    
-      Theme.Float := AElement;
-    'FoldedCode':    
+    'Float':
+      Theme.Float   := AElement;
+    'FoldedCode':
       Theme.FoldedCode := AElement;
-    'Hex':    
-      Theme.Hex := AElement;
-    'HotLink':    
+    'Hex':
+      Theme.Hex     := AElement;
+    'HotLink':
       Theme.HotLink := AElement;
-    'Identifier':    
+    'Identifier':
       Theme.Identifier := AElement;
-    'IllegalChar':    
+    'IllegalChar':
       Theme.IllegalChar := AElement;
-    'InvalidBreak':    
+    'InvalidBreak':
       Theme.InvalidBreak := AElement;
-    'LineHighlight':    
+    'LineHighlight':
       Theme.LineHighlight := AElement;
-    'LineNumber':    
+    'LineNumber':
       Theme.LineNumber := AElement;
-    'MarkedBlock':    
+    'MarkedBlock':
       Theme.MarkedBlock := AElement;
-    'ModifiedLine':    
+    'ModifiedLine':
       Theme.ModifiedLine := AElement;
-    'Number':    
-      Theme.Number := AElement;
-    'Octal':    
-      Theme.Octal := AElement;
-    'PlainText':    
+    'Number':
+      Theme.Number  := AElement;
+    'Octal':
+      Theme.Octal   := AElement;
+    'PlainText':
       Theme.PlainText := AElement;
-    'Preprocessor':    
+    'Preprocessor':
       Theme.Preprocessor := AElement;
-    'ReservedWord':    
+    'ReservedWord':
       Theme.ReservedWord := AElement;
-    'RightMargin':    
+    'RightMargin':
       Theme.RightMargin := AElement;
-    'Scripts':    
+    'Scripts':
       Theme.Scripts := AElement;
-    'SearchMatch':    
+    'SearchMatch':
       Theme.SearchMatch := AElement;
-    'String':    
+    'String':
       Theme.&String := AElement;
-    'Symbol':    
-      Theme.Symbol := AElement;
-    'SyncEditBackground':    
+    'Symbol':
+      Theme.Symbol  := AElement;
+    'SyncEditBackground':
       Theme.SyncEditBackground := AElement;
-    'SyncEditHighlight':    
+    'SyncEditHighlight':
       Theme.SyncEditHighlight := AElement;
-    'Tags':    
-      Theme.Tags := AElement;
-    'Whitespace':    
+    'Tags':
+      Theme.Tags    := AElement;
+    'Whitespace':
       Theme.Whitespace := AElement;
   end;
 end;
 
-function XMLToDITETheme(const FileName: String): TDITETheme;
+function XMLToDITETheme(const FileName: string): TDITETheme;
 var
-  Doc:      TXMLDocument;
+  Doc: TXMLDocument;
   RootNode: TDOMNode;
   ThemeNode: TDOMNode;
   ThemeElement: TDITEThemeElement;
-  I: Integer = 0;
-
-  
-
+  I: integer = 0;
 begin
   Result := Default(TDITETheme);
   ReadXMLFile(Doc, FileName);

@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: © 2024 Ștefan-Iulian Alecu <uneven-shiver@protonmail.com>
-//
+
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 unit DITE2Laz.Theme.Types;
@@ -10,15 +10,15 @@ interface
 
 type
   TDITEThemeElement = record
-    Bold:      Boolean;
-    Italic:    Boolean;
-    Underline: Boolean;
+    Bold:      boolean;
+    Italic:    boolean;
+    Underline: boolean;
 
-    DefaultForeground: Boolean;
-    DefaultBackground: Boolean;
+    DefaultForeground: boolean;
+    DefaultBackground: boolean;
 
-    ForegroundColorNew: String;
-    BackgroundColorNew: String;
+    ForegroundColorNew: string;
+    BackgroundColorNew: string;
   end;
 
   TDITETheme = record
@@ -37,9 +37,9 @@ type
     EnabledBreak: TDITEThemeElement;
     ErrorLine: TDITEThemeElement;
     ExecutionPoint: TDITEThemeElement;
-    Float: TDITEThemeElement;
+    Float:   TDITEThemeElement;
     FoldedCode: TDITEThemeElement;
-    Hex: TDITEThemeElement;
+    Hex:     TDITEThemeElement;
     HotLink: TDITEThemeElement;
     Identifier: TDITEThemeElement;
     IllegalChar: TDITEThemeElement;
@@ -48,8 +48,8 @@ type
     LineNumber: TDITEThemeElement;
     MarkedBlock: TDITEThemeElement;
     ModifiedLine: TDITEThemeElement;
-    Number: TDITEThemeElement;
-    Octal: TDITEThemeElement;
+    Number:  TDITEThemeElement;
+    Octal:   TDITEThemeElement;
     PlainText: TDITEThemeElement;
     Preprocessor: TDITEThemeElement;
     ReservedWord: TDITEThemeElement;
@@ -57,10 +57,10 @@ type
     Scripts: TDITEThemeElement;
     SearchMatch: TDITEThemeElement;
     &String: TDITEThemeElement;
-    Symbol: TDITEThemeElement;
+    Symbol:  TDITEThemeElement;
     SyncEditBackground: TDITEThemeElement;
     SyncEditHighlight: TDITEThemeElement;
-    Tags: TDITEThemeElement;
+    Tags:    TDITEThemeElement;
     Whitespace: TDITEThemeElement;
   end;
 

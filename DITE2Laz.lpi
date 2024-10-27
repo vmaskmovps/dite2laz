@@ -43,6 +43,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <Filename Value="src/DITE2Laz.Theme.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="src/DITE2Laz.Converter.Utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src/DITE2Laz.Converter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

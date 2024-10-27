@@ -5,9 +5,12 @@
 program DITE2Laz;
 
 uses
+  DITE2Laz.Converter,
+  DITE2Laz.Converter.Utils,
   DITE2Laz.Theme,
   DITE2Laz.Theme.Types,
   DOM,
+  SysUtils,
   XMLRead;
 
 var

@@ -127,6 +127,7 @@ lib/
 
 DITE2Laz
 DITE2Laz.license
+dite2laz.*
 *.theme.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/lazarus,freepascal,delphi,visualstudiocode
