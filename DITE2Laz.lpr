@@ -5,15 +5,21 @@
 program DITE2Laz;
 
 uses
+  DITE2Laz.Theme,
+  DITE2Laz.Theme.Types,
   DOM,
   XMLRead;
 
 var
-  Doc: TXMLDocument;
+  Doc:   TXMLDocument;
+  Theme: TDITETheme;
 begin
-  try
-    ReadXMLFile(Doc, 'sample.xml');
-  finally
-    Doc.Free;
-  end;
+  Theme := XMLToDITETheme('sample.theme.xml');
+  Writeln(Theme.FoldedCode.Bold);
+  Writeln(Theme.FoldedCode.Italic);
+  Writeln(Theme.FoldedCode.Underline);
+  Writeln(Theme.FoldedCode.DefaultBackground);
+  Writeln(Theme.FoldedCode.DefaultForeground);
+  Writeln(Theme.FoldedCode.BackgroundColorNew);
+  Writeln(Theme.FoldedCode.ForegroundColorNew);
 end.

@@ -1,21 +1,6 @@
-// SPDX-FileCopyrightText: © 2024 Ștefan-Iulian Alecu <uneven-shiver@protonmail.com>
-//
-// SPDX-License-Identifier: GPL-3.0-or-later
 {
 	"version": "2.0.0",
 	"tasks": [
-		{
-			"label": "release",
-			"file": "DITE2Laz.lpr",
-			"type": "fpc",
-			"buildOption": {
-				"syntaxMode": "ObjFPC",
-				"unitOutputDir": "./out",
-				"customOptions": [
-					"-dRELEASE"
-				]
-			}
-		},
 		{
 			"label": "debug",
 			"file": "DITE2Laz.lpr",
@@ -25,7 +10,23 @@
 				"unitOutputDir": "./out",
 				"customOptions": [
 					"-dDEBUG",
-					"-gw2"
+					"-gw2",
+					"-Fusrc"
+				]
+			}
+		},
+		{
+			"label": "release",
+			"file": "DITE2Laz.lpr",
+			"type": "fpc",
+			"buildOption": {
+				"syntaxMode": "ObjFPC",
+				"unitOutputDir": "./out",
+				"customOptions": [
+					"-dRELEASE",
+					"-Xs",
+					"-O4",
+					"-Fusrc"
 				]
 			}
 		}
