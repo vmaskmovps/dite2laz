@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "release",
+			"file": "DITE2Laz.lpr",
+			"type": "fpc",
+			"buildOption": {
+				"syntaxMode": "ObjFPC",
+				"unitOutputDir": "./out",
+				"customOptions": [
+					"-dRELEASE"
+				]
+			}
+		},
+		{
+			"label": "debug",
+			"file": "DITE2Laz.lpr",
+			"type": "fpc",
+			"buildOption": {
+				"syntaxMode": "ObjFPC",
+				"unitOutputDir": "./out",
+				"customOptions": [
+					"-dDEBUG",
+					"-gw2"
+				]
+			}
+		}
+	]
+}
