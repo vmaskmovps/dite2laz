@@ -27,6 +27,8 @@ type
 function CreateConfigXPath(const Category: string): string; inline;
 function GetGlobalElementXPath: string; inline;
 function GetLanguageElementXPath(Language: TLanguage): string;
+procedure SetElement(const XPath, Name: string; const Element: TDITEThemeElement);
+function MakeValidTagName(const Tag: unicodestring): unicodestring;
 
 implementation
 
@@ -50,6 +52,22 @@ begin
 
   Result := CreateConfigXPath(LanguagePaths[Language]);
 end;
+
+procedure SetElement(const XPath, Name: string; const Element: TDITEThemeElement);
+begin
+
+end;
+
+function MakeValidTagName(const Tag: unicodestring): unicodestring;
+var
+  i: integer;
+begin
+  Result := Tag;
+  for i := 1 to Length(Result) do
+    if not CharInSet(Result[i], ['A'..'Z', 'a'..'z', '0'..'9']) then
+      Result[i] := '_';
+end;
+
 
 initialization
   LanguagePaths := TLanguagePaths.Create;

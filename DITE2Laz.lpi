@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-SPDX-FileCopyrightText: © 2024 Ștefan-Iulian Alecu <uneven-shiver@protonmail.com>
-
-SPDX-License-Identifier: GPL-3.0-or-later
--->
-
 <CONFIG>
   <ProjectOptions>
     <Version Value="12"/>
@@ -44,11 +37,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="src/DITE2Laz.Converter.Utils.pas"/>
+        <Filename Value="src/DITE2Laz.Converter.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="src/DITE2Laz.Converter.pas"/>
+        <Filename Value="src/DITE2Laz.Converter.Utils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

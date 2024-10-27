@@ -11,18 +11,12 @@ uses
   DITE2Laz.Theme.Types,
   DOM,
   SysUtils,
-  XMLRead;
+  XMLRead, DITE2Laz.LazarusColorTheme;
 
 var
   Doc:   TXMLDocument;
   Theme: TDITETheme;
 begin
   Theme := XMLToDITETheme('sample.theme.xml');
-  Writeln(Theme.FoldedCode.Bold);
-  Writeln(Theme.FoldedCode.Italic);
-  Writeln(Theme.FoldedCode.Underline);
-  Writeln(Theme.FoldedCode.DefaultBackground);
-  Writeln(Theme.FoldedCode.DefaultForeground);
-  Writeln(Theme.FoldedCode.BackgroundColorNew);
-  Writeln(Theme.FoldedCode.ForegroundColorNew);
+  DITEThemeToLazarusTheme(Theme, 'Test a Name with Spaces', 'b');
 end.
