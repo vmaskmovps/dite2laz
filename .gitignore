@@ -1,8 +1,6 @@
-(*
- * SPDX-FileCopyrightText: © 2024 Ștefan-Iulian Alecu <uneven-shiver@protonmail.com>
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
- *)
+# SPDX-FileCopyrightText: © 2024 Ștefan-Iulian Alecu <uneven-shiver@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 # Created by https://www.toptal.com/developers/gitignore/api/lazarus,freepascal,delphi,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=lazarus,freepascal,delphi,visualstudiocode
