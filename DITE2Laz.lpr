@@ -7,11 +7,12 @@ program DITE2Laz;
 uses
   DITE2Laz.Converter,
   DITE2Laz.Converter.Utils,
+  DITE2Laz.LazarusColorTheme,
   DITE2Laz.Theme,
   DITE2Laz.Theme.Types,
   DOM,
   SysUtils,
-  XMLRead, DITE2Laz.LazarusColorTheme;
+  XMLRead;
 
 var
   Doc:   TXMLDocument;

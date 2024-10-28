@@ -44,6 +44,16 @@
         <Filename Value="src/DITE2Laz.Converter.Utils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="src/DITE2Laz.LazarusColorTheme.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DITE2Laz.LazarusColorTheme"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src/DITE2Laz.LazarusColorTheme.AhaNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DITE2Laz.LazarusColorTheme"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

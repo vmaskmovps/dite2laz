@@ -2,8 +2,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// SPDX-License-Identifier: GPL-3.0-or-later
-
 unit DITE2Laz.Theme;
 
 {$mode objfpc}{$H+}
